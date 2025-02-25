@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TequliasRestaurant.Data;
 
@@ -11,9 +12,11 @@ using TequliasRestaurant.Data;
 namespace TequliasRestaurant.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250223194223_AddedImageUrl")]
+    partial class AddedImageUrl
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -421,7 +424,7 @@ namespace TequliasRestaurant.Data.Migrations
                             ProductId = 2,
                             CategoryId = 2,
                             Description = "A delicious chicken taco",
-                            ImageUrl = "https://dummyimage.com/150",
+                            ImageUrl =  "https://dummyimage.com/150",
                             Name = "Chicken Taco",
                             Price = 1.99m,
                             Stock = 101
